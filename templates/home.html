@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>PUBG Finish Placement Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+      <input type="text" name="footSpeed" placeholder="footSpeed" required="required" /><br>
+    	<input type="text" name="totalDistances" placeholder="totalDistances" required="required" /><br>
+        <input type="text" name="medicKits" placeholder="medicKits" required="required" /><br>
+        <input type="text" name="weaponsAcquired" placeholder="weaponsAcquired" required="required" /><br>
+        <input type="text" name="damageDealt" placeholder="damageDealt" required="required" /><br>
+        <input type="text" name="kills" placeholder="kills" required="required" /><br>
+        <input type="text" name="longestKill" placeholder="longestKill" required="required" /><br>
+        <input type="text" name="killstreaks" placeholder="killStreaks" required="required" /><br>
+        <input type="text" name="DBNOs" placeholder="DBNOs" required="required" /><br>
+        <input type="text" name="headshotKills" placeholder="headShotKills" required="required" /><br>
+        <input type="text" name="teamHelping" placeholder="teamHelping" required="required" /><br>
+        <input type="text" name="killPlace" placeholder="killPlace" required="required" /><br>
+        <input type="text" name="matchDuration" placeholder="matchDuration" required="required" /><br>
+        <input type="text" name="matchType" placeholder="matchType" required="required" /><br>
+       
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+  
+   
+ </div>
+ {{prediction_text}}
+
+</body>
+</html>
